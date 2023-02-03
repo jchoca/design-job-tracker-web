@@ -119,7 +119,7 @@
 
     #user-profile-icon.active {
         font-weight: bold;
-        color: rgb(255, 255, 255)
+        color: rgb(255, 255, 255);
     }
 
     #user-profile-menu {
@@ -132,6 +132,8 @@
         -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+        color: rgb(0, 0, 0, 0.6);
+        font-weight: 500;
     }
 
     #user-profile-menu div {
@@ -143,5 +145,6 @@
 
     #user-profile-menu div:hover {
         background: rgb(16, 64, 59);
+        color: rgb(255, 255, 255)
     }
 </style>
