@@ -6,7 +6,7 @@
     }
 </script>
 
-<div class="nav-container">
+<div class="nav-container montserrat">
     <div>
         <div id="logo">
             Q
@@ -25,18 +25,25 @@
         </div>
     </div>
     <div id="user-profile">
-        <span id="user-profile-icon"
-              on:click={toggleMenu}
+        <button class="button-no-styling" type="button" on:click={toggleMenu} on:onkeydown={toggleMenu} tabindex="0">
+            <span id="user-profile-icon"
               class="material-icons"
               class:active={menuVisible}>person</span>
+        </button>
+
         {#if menuVisible}
             <div id="user-profile-menu">
-                <div>
-                    <div>Settings</div>
-                </div>
-                <div>
-                    <div>Logout</div>
-                </div>
+                <a href="/settings">
+                    <div class="menu-item">
+                        Settings
+                    </div>
+                </a>
+                <a href="/logout">
+                    <div class="menu-item">
+                        Logout
+                        &nbsp <span id="logout-icon" class="material-icons">logout</span>
+                    </div>
+                </a>
             </div>
         {/if}
     </div>
@@ -60,14 +67,13 @@
         font-style: normal;
     }
 
-    a {
+    a, #logout-icon {
         color: rgb(255, 255, 255, 0.7);
         text-decoration: none;
     }
 
     .nav-container {
         display: flex;
-        font-family: "Montserrat", Verdana, sans-serif;
         background-color: rgb(16, 64, 59);
         justify-content: space-between;
     }
@@ -99,6 +105,11 @@
     #slot {
         justify-content: center;
         display: flex;
+    }
+
+    #slot div {
+        flex-grow: 1;
+        margin: 0 40px;
     }
 
     #logo {
@@ -136,8 +147,12 @@
         font-weight: 500;
     }
 
-    #user-profile-menu div {
-        padding: 10px;
+    #user-profile-menu a {
+        width: 100%;
+    }
+
+    #user-profile-menu .menu-item {
+        padding: 15px;
         width: 100%;
         justify-content: center;
         display: flex;
@@ -146,5 +161,16 @@
     #user-profile-menu div:hover {
         background: rgb(16, 64, 59);
         color: rgb(255, 255, 255)
+    }
+
+    .button-no-styling {
+        border: none;
+        background: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    :global(.montserrat) {
+        font-family: "Montserrat", Verdana, sans-serif;
     }
 </style>
